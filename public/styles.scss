@@ -1,0 +1,220 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+$primaryFont: 'Anton', sans-serif;
+$subFont: 'Raleway', sans-serif;
+
+//Colors
+$background: #2B2B2B;
+$yellow: #ffe660;
+$purple: #DD00FF;
+$green: #50E3C1;
+
+//Mixins
+@mixin center {
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+//Nav Styles
+.nav {
+	height: 4vh;
+	margin-left: 10.5%;
+	margin-right: 14%;
+	margin-top: 2%;
+}
+.nav-item {
+	height: 100%;
+}
+.nav-link {
+	color: white;
+	font-family: $subFont;
+	font-weight: bold;
+	opacity: 0.5;
+	transition: 0.2s ease-in-out;
+	font-size: 3vh;
+}
+.nav-link:hover {
+	opacity: 1;
+}
+
+//Hack Styles
+.hack {
+	margin: 15px;
+
+	.titleRow {
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+	}
+	.title {
+		margin: auto;
+		margin-top: 5%;
+	}
+	h2 {
+		font-family: $primaryFont;
+		font-size: 3vw;
+	}
+	.icon {
+		@include center;
+		margin-bottom: 1%;
+	}
+	.hostedBy, .location, .date, .note {
+		font-family: $subFont;
+	}
+	.hostedBy {
+		font-size: 1.5vw;
+		margin-top: -5%;
+	}
+	.dateEnvelope {
+		background-color: $background;
+		margin: 10%;
+		border-radius: 15px;
+		.date {
+			font-size: 1.3rem;
+		}
+		.month {
+			margin-top: 10px;
+			margin-bottom: -2px;
+		}
+		.days {
+			margin-top: -2px;
+		}
+	}
+	.noteRow {
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+	}
+	.note {
+		margin-top: 5%;
+	}
+	button {
+		background-color: white;
+		color: $background;
+		border-radius: 20px;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10%;
+	}
+}
+
+.webDev {
+	.titleRow, .infoRow {
+		background-color: #FFE600;
+	}
+	.date {
+		color: $yellow;
+	}
+	.noteRow {
+		background-color: rgba(255, 230, 96, 0.8);
+	}
+}
+.iosDev {
+	.titleRow, .infoRow {
+		background-color: #50E3C1;
+	}
+	.date {
+		color: $green;
+	}
+	.noteRow {
+		background-color: rgba(80, 227, 193, 0.81);
+	}
+}
+.androidDev {
+	.titleRow, .infoRow {
+		background-color: #DD00FF;
+	}
+	.date {
+		color: $purple;
+	}
+	.noteRow {
+		background-color: rgba(221, 0, 255, 0.8);
+	}
+}
+
+body {
+	background-color: $background;
+}
+
+#index {
+	#header {
+		color: white;
+		font-size: calc(2rem + 8vw);
+		font-family: $primaryFont;
+		letter-spacing: 4px;
+	}
+	#getStarted {
+		width: 100%;
+		height: 10vh;
+		background-image: linear-gradient(to right, #dd00ff, #50e3c1);
+		background-repeat: no-repeat;
+		background-size: cover;
+		color: white;
+		font-size: calc(0.8rem + 2vw);
+		font-weight: bold;
+		font-family: $primaryFont;
+		letter-spacing: 5px;
+	}
+	#title {
+		margin-top: 10%;
+	}
+	#buttonRow {
+		margin-top: 5%;
+	}
+	#hackContainer {
+		margin-top: 15%;
+		margin-bottom: 15%;
+	}
+}
+
+#signup {
+	#color {
+		background-image: linear-gradient(to right bottom, #dd00ff, #50e3c1);
+		border-radius: 10px;
+	}
+	form {
+		input {
+			background: none;
+			border: none;
+			color: $background;
+		}
+		::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+			color: $background;
+		}
+		::-moz-placeholder { /* Firefox 19+ */
+			color: white;
+			opacity: 0.8;
+		}
+		::-moz-input-placeholder:hover {
+			opacity: 1;
+		}
+		::-moz-input-placeholder:focus {
+			opacity: 1;
+		}
+		:-ms-input-placeholder { /* IE 10+ */
+			color: white;
+			opacity: 0.8;
+		}
+		:-ms-input-placeholder:hover {
+			opacity: 1;
+		}
+		:-ms-input-placeholder:focus {
+			opacity: 1;
+		}
+		:-moz-placeholder { /* Firefox 18- */
+			color: white;
+			opacity: 0.8;
+		}
+		:-moz-input-placeholder:hover {
+			opacity: 1;
+		}
+		:-moz-input-placeholder:focus {
+			opacity: 1;
+		}
+	}
+	#formContainer {
+		border-radius: 100px;
+	}
+}

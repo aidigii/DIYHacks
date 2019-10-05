@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+.nav {
+  height: 4vh;
+  margin-left: 10.5%;
+  margin-right: 14%;
+  margin-top: 2%;
+}
+
+.nav-item {
+  height: 100%;
+}
+
+.nav-link {
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  opacity: 0.5;
+  transition: 0.2s ease-in-out;
+  font-size: 3vh;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.hack {
+  margin: 15px;
+}
+.hack .titleRow {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.hack .title {
+  margin: auto;
+  margin-top: 5%;
+}
+.hack h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 3vw;
+}
+.hack .icon {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+.hack .hostedBy, .hack .location, .hack .date, .hack .note {
+  font-family: "Raleway", sans-serif;
+}
+.hack .hostedBy {
+  font-size: 1.5vw;
+  margin-top: -5%;
+}
+.hack .dateEnvelope {
+  background-color: #2B2B2B;
+  margin: 10%;
+  border-radius: 15px;
+}
+.hack .dateEnvelope .date {
+  font-size: 1.3rem;
+}
+.hack .dateEnvelope .month {
+  margin-top: 10px;
+  margin-bottom: -2px;
+}
+.hack .dateEnvelope .days {
+  margin-top: -2px;
+}
+.hack .noteRow {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.hack .note {
+  margin-top: 5%;
+}
+.hack button {
+  background-color: white;
+  color: #2B2B2B;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.webDev .titleRow, .webDev .infoRow {
+  background-color: #FFE600;
+}
+.webDev .date {
+  color: #ffe660;
+}
+.webDev .noteRow {
+  background-color: rgba(255, 230, 96, 0.8);
+}
+
+.iosDev .titleRow, .iosDev .infoRow {
+  background-color: #50E3C1;
+}
+.iosDev .date {
+  color: #50E3C1;
+}
+.iosDev .noteRow {
+  background-color: rgba(80, 227, 193, 0.81);
+}
+
+.androidDev .titleRow, .androidDev .infoRow {
+  background-color: #DD00FF;
+}
+.androidDev .date {
+  color: #DD00FF;
+}
+.androidDev .noteRow {
+  background-color: rgba(221, 0, 255, 0.8);
+}
+
+body {
+  background-color: #2B2B2B;
+}
+
+#index #header {
+  color: white;
+  font-size: calc(2rem + 8vw);
+  font-family: "Anton", sans-serif;
+  letter-spacing: 4px;
+}
+#index #getStarted {
+  width: 100%;
+  height: 10vh;
+  background-image: linear-gradient(to right, #dd00ff, #50e3c1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-size: calc(0.8rem + 2vw);
+  font-weight: bold;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 5px;
+}
+#index #title {
+  margin-top: 10%;
+}
+#index #buttonRow {
+  margin-top: 5%;
+}
+#index #hackContainer {
+  margin-top: 15%;
+  margin-bottom: 15%;
+}
+
+#signup #color {
+  background-image: linear-gradient(to right bottom, #dd00ff, #50e3c1);
+  border-radius: 10px;
+}
+#signup form input {
+  background: none;
+  border: none;
+  color: #2B2B2B;
+}
+#signup form ::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #2B2B2B;
+}
+#signup form ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+  opacity: 0.8;
+}
+#signup form ::-moz-input-placeholder:hover {
+  opacity: 1;
+}
+#signup form ::-moz-input-placeholder:focus {
+  opacity: 1;
+}
+#signup form :-ms-input-placeholder {
+  /* IE 10+ */
+  color: white;
+  opacity: 0.8;
+}
+#signup form :-ms-input-placeholder:hover {
+  opacity: 1;
+}
+#signup form :-ms-input-placeholder:focus {
+  opacity: 1;
+}
+#signup form :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+  opacity: 0.8;
+}
+#signup form :-moz-input-placeholder:hover {
+  opacity: 1;
+}
+#signup form :-moz-input-placeholder:focus {
+  opacity: 1;
+}
+#signup #formContainer {
+  border-radius: 100px;
+}
+
+/*# sourceMappingURL=styles.css.map */
