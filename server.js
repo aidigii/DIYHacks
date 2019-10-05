@@ -32,8 +32,8 @@ app.post('/quotes', (req, res) => {
   })
 })
 
-app.post('/quotes', (req, res) => {
-  db.collection('hackathoninfo').save(req.body, (err, result) => {
+app.post('/signup', (req, res) => {
+  db.collection('userinfo').save(req.body, (err, result) => {
     if (err) return console.log(err)
 
     console.log('saved to database')
