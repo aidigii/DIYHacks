@@ -32,14 +32,31 @@ app.get('/', (req, res) => {
 	})
 })
 
-app.post('/signup', (req, res) => {
-  db.collection('userinfo').save(req.body, (err, result) => {
-    if (err) return console.log(err)
 
-    console.log('saved to database')
-    res.redirect('/')
-  })
-})
+app.post('/signup', (req, res) => { 
+    var firstname = req.body.firstname; 
+    var lastname =req.body.lastname; 
+    var email = req.body.email; 
+    var password =req.body.password; 
+    var skills = req.body.skills;
+  
+    var data = { 
+        firstname: firstname, 
+        lastname:lastname, 
+        email:email, 
+        password:password,
+        skills: skills
+    } 
+    
+UserInfo.insertOne(data,function(err, collection){ 
+        if (err) throw err;
+        console.log(data);
+        console.log("Record inserted Successfullyyyyy"); 
+              
+    }); 
+          
+    return res.redirect('/'); 
+}) 
 /**
 
 app.get('/', (req, res) => {
@@ -54,5 +71,8 @@ app.get('/', (req, res) => {
 
 
 /*****************************************************/
+
+
+
 
 

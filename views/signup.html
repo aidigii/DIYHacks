@@ -21,10 +21,10 @@
 
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#">home</a>
+			<a class="nav-link" href="/">home</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#">about us</a>
+			<a class="nav-link" href="#">submit</a>
 		</li>
 	</ul>
 	<div class = "container">
@@ -33,7 +33,7 @@
 				<h1>SIGN UP.</h1>
 			</div>
 		</div>
-		<form method = "post">
+		<form method = "post" action = "/signup">
 			<div class = "row justify-content-center">
 				<div id = "color" class = "col-md-7">
 					<div id = "formContainer" class = "row justify-content-center">
@@ -70,11 +70,20 @@
 							</div>
 						</div>
 						<div class = "col-md-4">
-
+							<div class = "form-row">
+								<select multiple size = "2" name="skills">
+									<option value="webdev">Web Development</option>
+									<option value="appdev">App Development</option>
+									<option value="other">Other</option>
+								</select>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+
+			<button type = "submit"> Submit </button>
 		</form>
 	</div>
 </body>

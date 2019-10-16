@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="en" id = "signup">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap Links -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	<!--My Stuff-->
+	<link rel = "stylesheet" type = "text/css" href = "styles.css"/>
+
+	<title>Submit a Hackathon</title>
+</head>
+<body>
+	<ul class="nav .navbar-expand">
+		<li class="nav-item mr-auto">
+
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/">home</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="signup.html">sign up</a>
+		</li>
+	</ul>
+	<div class = "container">
+		<div class = "row justify-content-center">
+			<div class = "col-md-8 text-center">
+				<h1>Submit a Hackathon</h1>
+			</div>
+		</div>
+		<form method = "post" action = "/signup">
+			<div class = "row justify-content-center">
+				<div id = "color" class = "col-md-7">
+					<div id = "formContainer" class = "row justify-content-center">
+						<div class = "col-md-8">
+							<div class = "form-row">
+								<div class = "col-12 form-group">
+									<label for = "titleHack">Title of Hack</label>
+									<input id = "title" type = "text" name = "title" class="form-control"  placeholder = "Web application utilizing machine learning" required/>
+								</div>
+							</div>
+							<div class = "form-row">
+								<div class = "col-12 form-group">
+									<label for = "lastname">Last Name</label>
+									<input id = "lastname" type = "text" name = "lastname" class="form-control" placeholder = "Shmoe" required/>
+								</div>
+							</div>
+							<div class = "form-row">
+								<div class = "col-12 form-group">
+									<label for = "email">Email</label>
+									<input id = "email" type = "text" name = "email" class="form-control" aria-describedby="emailHelp" placeholder = "reddy2code@shmoe.com" required/>
+								</div>
+							</div>
+							<div class = "form-row">
+								<div class = "col-12 form-group">
+									<label for = "password">Password</label>
+									<input id = "password" type = "password" name = "password" class="form-control"  required/>
+								</div>
+							</div>
+							<div class = "form-row">
+								<div class = "col-12 form-group">
+									<label for = "password">Password</label>
+									<input id = "confirmPass" type = "password" name = "confirmPass" class="form-control" required/>
+								</div>
+							</div>
+						</div>
+						<div class = "col-md-4">
+							<div class = "form-row">
+								<select multiple size = "2" name="skills">
+									<option value="webdev">Web Development</option>
+									<option value="appdev">App Development</option>
+									<option value="other">Other</option>
+								</select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<button type = "submit"> Submit </button>
+		</form>
+	</div>
+</body>
+</html>
