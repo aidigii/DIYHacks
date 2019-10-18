@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.post('/signup', (req, res) => { 
+app.post('/signup', (req, res) => {  
     var firstname = req.body.firstname; 
     var lastname =req.body.lastname; 
     var email = req.body.email; 
@@ -57,6 +57,38 @@ UserInfo.insertOne(data,function(err, collection){
           
     return res.redirect('/'); 
 }) 
+
+
+app.post('/submit', (req, res) => {  
+  var title = req.body.title; 
+  var month =req.body.month; 
+  var days = req.body.days; 
+  var location =req.body.location; 
+  var notes =req.body.notes; 
+  var skills = req.body.skills;
+  var host = req.body.host; 
+  var host_id =req.body.host_id; 
+
+  var data = { 
+      title: title,
+      month: month,
+      days: days,
+      location: location,
+      notes: notes,
+      skills: skills,
+      host: host,
+      host_id: host_id
+  } 
+  
+HackInfo.insertOne(data,function(err, collection){ 
+      if (err) throw err;
+      console.log(data);
+      console.log("Record inserted Successfullyyyyy"); 
+            
+  }); 
+        
+  return res.redirect('/'); 
+})
 /**
 
 app.get('/', (req, res) => {
