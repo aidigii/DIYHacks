@@ -1,7 +1,7 @@
 //Requiring stuff
 const express = require('express')
 const bodyParser= require('body-parser')
-const app = express()
+const app = express() 
 const MongoClient = require('mongodb').MongoClient;
 app.use(bodyParser.urlencoded({extended: true}))
 app.set('view engine', 'ejs')
@@ -33,16 +33,50 @@ app.get('/', (req, res) => {
 })
 
 
+app.post('/hackPost', (req, res)=>{
+    var title = req.body.title;
+    var location = req.body.location;
+    var description = req.body.description;
+    var host = host
+    var month = req.body.month;
+    var days = req.body.days;
+    var skills = req.body.skills;
+
+
+    var info = {
+      title : title,
+      location : location,
+      description : description,
+      host : host,
+      month : month,
+      days : days,
+      skills : skills
+    }
+
+    HackInfo.insertOne(info, function(err, collection){
+      if(err){
+        throw err;
+      }
+      console.log(info);
+      console.log("Hackathon posted!");
+    });
+
+    return res.redirect('/');
+
+})
+
 app.post('/signup', (req, res) => { 
     var firstname = req.body.firstname; 
-    var lastname =req.body.lastname; 
+    var lastname = req.body.lastname; 
+    var username = req.body.username;
     var email = req.body.email; 
-    var password =req.body.password; 
+    var password = req.body.password; 
     var skills = req.body.skills;
   
     var data = { 
         firstname: firstname, 
         lastname:lastname, 
+        username : username,
         email:email, 
         password:password,
         skills: skills

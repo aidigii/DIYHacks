@@ -33,7 +33,7 @@
 				<h1>Submit a Hackathon</h1>
 			</div>
 		</div>
-		<form method = "post" action = "/signup">
+		<form method = "post" action = "/hackPost">
 			<div class = "row justify-content-center">
 				<div id = "color" class = "col-md-7">
 					<div id = "formContainer" class = "row justify-content-center">
@@ -46,26 +46,38 @@
 							</div>
 							<div class = "form-row">
 								<div class = "col-12 form-group">
-									<label for = "lastname">Last Name</label>
-									<input id = "lastname" type = "text" name = "lastname" class="form-control" placeholder = "Shmoe" required/>
+									<label for = "host">Username</label>
+									<input id = "host" type = "text" name = "host" class="form-control" placeholder = "username" required/>
 								</div>
 							</div>
 							<div class = "form-row">
 								<div class = "col-12 form-group">
-									<label for = "email">Email</label>
-									<input id = "email" type = "text" name = "email" class="form-control" aria-describedby="emailHelp" placeholder = "reddy2code@shmoe.com" required/>
+									<label for = "location">Location</label>
+									<input id = "location" type = "text" name = "location" class="form-control" aria-describedby="emailHelp" required/>
 								</div>
 							</div>
 							<div class = "form-row">
 								<div class = "col-12 form-group">
-									<label for = "password">Password</label>
-									<input id = "password" type = "password" name = "password" class="form-control"  required/>
+									<label for = "description">Description</label>
+									<input id = "description" type = "text" name = "description" class="form-control"  required/>
 								</div>
 							</div>
 							<div class = "form-row">
 								<div class = "col-12 form-group">
-									<label for = "password">Password</label>
-									<input id = "confirmPass" type = "password" name = "confirmPass" class="form-control" required/>
+									<label for = "month">Month</label>
+									<input id = "month" type = "text" name = "month" class="form-control" required/>
+								</div>
+							</div>
+							<div class = "form-row">
+								<div class = "col-12 form-group">
+									<label for = "days">Days</label>
+									<input id = "days" type = "text" name = "days" class="form-control" aria-describedby="emailHelp" required/>
+								</div>
+							</div>
+							<div class = "form-row">
+								<div class = "col-12 form-group">
+									<label for = "skills">Skills</label>
+									<input id = "skills" type = "text" name = "skills" class="form-control" aria-describedby="emailHelp" required/>
 								</div>
 							</div>
 						</div>
