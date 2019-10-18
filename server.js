@@ -15,16 +15,24 @@ app.use(express.static(__dirname + '/imgs/'))
 
 const uri = "mongodb+srv://aidigii21:1234567890@cluster1-7bccy.mongodb.net/test?retryWrites=true&w=majority"
 const client = new MongoClient(uri, { useNewUrlParser: true,  useUnifiedTopology: true })
-var HackInfo, UserInfo
+var HackInfo, UserInfo, db
 client.connect(err => {
+    db = client.db("DIYDatabase");
 	HackInfo = client.db("DIYDatabase").collection("hackathoninfo");
 	UserInfo = client.db("DIYDatabase").collection("userinfo");
 	client.close()
 })
 
+
+
+
 app.listen(3000, () => {
 	console.log('listening on 3000')
 })
+
+
+
+
 
 app.get('/', (req, res) => {
 	HackInfo.find().toArray((err, data) => {
@@ -93,6 +101,17 @@ HackInfo.insertOne(data,function(err, collection){
         
   return res.redirect('/'); 
 })
+
+db.createUser(
+    {
+        user: "admin",
+        pwd: "adminpassword",
+        roles: [{
+            role: "userAdminAnyDatabase",
+            db: "admin"
+        }]
+        
+    });
 /**
 
 app.get('/', (req, res) => {
@@ -104,18 +123,7 @@ app.get('/', (req, res) => {
 })
 **/
 
-db("DIYDatabase").createUser(
-    {
-        user: "admin",
-        pwd: "adminpassword",
-        roles: [{
-            role: "userAdminAnyDatabase",
-            db: "admin"
-        }]
-        
-    });
 
-db.auth('admin', 'adminpassword');
 /*****************************************************/
 
 
