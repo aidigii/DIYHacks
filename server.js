@@ -11,6 +11,8 @@ app.use(express.static(__dirname + '/views/'))
 app.use(express.static(__dirname + '/public/'))
 app.use(express.static(__dirname + '/imgs/'))
 
+
+
 const uri = "mongodb+srv://aidigii21:1234567890@cluster1-7bccy.mongodb.net/test?retryWrites=true&w=majority"
 const client = new MongoClient(uri, { useNewUrlParser: true,  useUnifiedTopology: true })
 var HackInfo, UserInfo
@@ -47,6 +49,8 @@ app.post('/signup', (req, res) => {
         password:password,
         skills: skills
     } 
+
+//create function that 
     
 UserInfo.insertOne(data,function(err, collection){ 
         if (err) throw err;
@@ -68,8 +72,18 @@ app.get('/', (req, res) => {
 })
 **/
 
+db("DIYDatabase").createUser(
+    {
+        user: "admin",
+        pwd: "adminpassword",
+        roles: [{
+            role: "userAdminAnyDatabase",
+            db: "admin"
+        }]
+        
+    });
 
-
+db.auth('admin', 'adminpassword');
 /*****************************************************/
 
 
