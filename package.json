@@ -23,6 +23,7 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aidigii/DIYHacks.git"

@@ -28,23 +28,41 @@ const {
     Stitch,
     RemoteMongoClient,
     AnonymousCredential,
-    
+    UserPasswordAuthProviderClient,
+    UserPasswordCredential,
+    loginWithCredential,
+
 } = require('mongodb-stitch-server-sdk');
+
+
+
+
 
 const client1 = Stitch.initializeDefaultAppClient('diyhacks-nmmbf');
 
-const db1 = client1.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('DIYHacks');
 
-client1.auth.loginWithCredential(new AnonymousCredential()).then(user =>
-  db1.collection('userinformation').updateOne({owner_id: client1.auth.user.id}, {$set:{number:42}}, {upsert:true})
-).then(() =>
-  db1.collection('userinformation').find({owner_id: client1.auth.user.id}, { limit: 100}).asArray()
-).then(docs => {
-    console.log("Found docs", docs)
-    console.log("[MongoDB Stitch] Connected to Stitch")
-}).catch(err => {
-    console.error(err)
-});
+const emailPasswordClient = client1.auth
+  .getProviderClient(UserPasswordAuthProviderClient.factory);
+
+
+emailPasswordClient.registerWithEmail("and180008@utdallas.edu", "something")
+  .then(() => console.log("Successfully sent account confirmation email!"))
+  .catch(err => console.error("Error registering new user:", err));
+
+
+const credential = new UserPasswordCredential("and180008@utdallas.edu", "something")
+client1.auth.loginWithCredential(credential)
+  // Returns a promise that resolves to the authenticated user
+  .then(authedUser => console.log(`successfully logged in with id: ${authedUser.id}`))
+  .catch(err => console.error(`login failed with error: ${err}`))
+
+
+
+
+
+
+
+
 
 
 

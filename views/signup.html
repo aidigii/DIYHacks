@@ -10,22 +10,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.4.0/stitch.js"></script>
-<script>
-  const client = stitch.Stitch.initializeDefaultAppClient('diyhacks-nmmbf');
-
-  const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('DIYHacks');
-
-  client.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user =>
-    db.collection('userinformation').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
-  ).then(() =>
-    db.collection('userinformation').find({owner_id: client.auth.user.id}, { limit: 100}).asArray()
-  ).then(docs => {
-      console.log("Found docs", docs)
-      console.log("[MongoDB Stitch] Connected to Stitch")
-  }).catch(err => {
-    console.error(err)
-  });
-</script>
 
 
 	<!--My Stuff-->
