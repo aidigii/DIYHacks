@@ -115,6 +115,8 @@ app.post('/hackPost', (req, res)=>{
 
 })
 
+var signups = []
+
 app.post('/signup', (req, res) => { 
     var firstname = req.body.firstname; 
     var lastname = req.body.lastname; 
@@ -122,6 +124,7 @@ app.post('/signup', (req, res) => {
     var email = req.body.email; 
     var password = req.body.password; 
     var skills = req.body.skills;
+//  signups = [req.body.signups];
   
     var data = { 
         firstname: firstname, 
@@ -129,7 +132,8 @@ app.post('/signup', (req, res) => {
         username : username,
         email:email, 
         password:password,
-        skills: skills
+        skills: skills,
+    //  signups: signups,
     } 
 
 //create function that 
@@ -144,6 +148,11 @@ UserInfo.insertOne(data,function(err, collection){
     return res.redirect('/'); 
 }) 
 
+function addUsertoHack(userId){
+
+    signups.push(userId);
+
+}
 
 app.post('/submit', (req, res) => {  
   var title = req.body.title; 
