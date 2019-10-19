@@ -9,6 +9,24 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.4.0/stitch.js"></script>
+<script>
+  const client = stitch.Stitch.initializeDefaultAppClient('diyhacks-nmmbf');
+
+  const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('DIYHacks');
+
+  client.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user =>
+    db.collection('userinformation').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
+  ).then(() =>
+    db.collection('userinformation').find({owner_id: client.auth.user.id}, { limit: 100}).asArray()
+  ).then(docs => {
+      console.log("Found docs", docs)
+      console.log("[MongoDB Stitch] Connected to Stitch")
+  }).catch(err => {
+    console.error(err)
+  });
+</script>
+
 
 	<!--My Stuff-->
 	<link rel = "stylesheet" type = "text/css" href = "styles.css"/>
@@ -97,6 +115,95 @@
 
 			<button type = "submit"> Submit </button>
 		</form>
-	</div>
+
+<div class="quickstart-container" id="main">
+  
+    <div id="info">
+      <div id="success"></div>
+      <div id="error"></div>
+    </div>
+    <div id="logged-in" hidden>
+      <button class="btn btn-success" onclick="handleLogout()">
+        Log Out
+      </button>
+    </div> 
+    <div id="finished-registration" hidden>
+      <button class="btn btn-success" onclick="showControlPanel()">
+        Go Back
+      </button>
+    </div> 
+    <div id="control-panel">
+      <h4>Email/Password Authentication</h4>
+      <button class="btn btn-success" onclick="showRegistrationForm()">
+        Create a New Account
+      </button>
+      <button class="btn btn-success" onclick="showLoginForm()">
+        Log In to an Existing Account
+      </button>
+      <button class="btn btn-success" onclick="showResendConfirmationForm()">
+        Send a New Confirmation Email
+      </button>
+    </div>
+  
+    <div id="resend-confirmation" hidden>
+      <h4>Send a New Confirmation Email</h4>
+      <label for="resend-confirmation-email">Email:</label>
+      <div class="input-group mb-1">
+        <input type="text" class="form-control" id="resend-confirmation-email" aria-label="resend-confirmation-email" />
+      </div>
+
+      <button class="btn btn-success" onclick="handleResendConfirmation()">
+        Re-Send Confirmation Email
+      </button>
+      <button class="btn btn-secondary" onclick="showControlPanel()">
+        Go Back
+      </button>
+      
+    </div>
+  
+    <div id="create-a-user" hidden>
+      <h4>Create Email/Password Account</h4>
+      <label for="create-a-user-email">Email:</label>
+      <div class="input-group mb-1">
+        <input type="text" class="form-control" id="create-a-user-email" aria-label="create-a-user-email" />
+      </div>
+
+      <label for="create-a-user-password">Password:</label>
+      <div class="input-group mb-2">
+        <input type="password" class="form-control" id="create-a-user-password" aria-label="create-a-user-password" />
+      </div>
+      <button class="btn btn-success" onclick="handleSignup()">
+        Create a New Account
+      </button>
+      <button class="btn btn-secondary" onclick="showControlPanel()">
+        Go Back
+      </button>
+    </div>
+  
+  
+  
+    <div id="login" hidden>
+      <h4>Log In to Email/Password Account</h4>
+      <label for="login-email">Email:</label>
+      <div class="input-group mb-1">
+        <input type="text" class="form-control" id="login-email" aria-label="login-email" />
+      </div>
+
+      <label for="login-password">Password:</label>
+      <div class="input-group mb-2">
+        <input type="password" class="form-control" id="login-password" aria-label="login-password" />
+      </div>
+      <button class="btn btn-success" onclick="handleLogin()">
+        Log In
+      </button>
+      <button class="btn btn-secondary" onclick="showControlPanel()">
+        Go Back
+      </button>
+    </div>
+  
+  
+    
+</div>
+
 </body>
 </html>
