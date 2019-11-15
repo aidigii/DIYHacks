@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en" id = "signup">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap Links -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.4.0/stitch.js"></script>
+
+
+	<!--My Stuff-->
+	<link rel = "stylesheet" type = "text/css" href = "styles.css"/>
+
+	<title>Login | DIYHacks</title>
+</head>
+<body>
+	<ul class="nav .navbar-expand">
+		<li class="nav-item mr-auto">
+
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/">home</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="submit.html">submit</a>
+		</li>
+	</ul>
+	<div class = "container">
+		<div class = "row justify-content-center">
+			<div class = "col-md-8 text-center">
+				<h1>Log in.</h1>
+			</div>
+		</div>
+		<form method = "post" action = "/login">
+			<div class = "row justify-content-center">
+				<div id = "color" class = "col-md-7">
+					<div id = "formContainer" class = "row justify-content-center">
+						<div class = "col-md-8">
+							<div class = "form-row">
+								<div class = "col-12 form-group">
+									<label for = "username">Username</label>
+									<input id = "username" type = "text" name = "username" class="form-control" placeholder = "username" required/>
+								</div>
+							</div>
+							<div class = "form-row">
+								<div class = "col-12 form-group">
+									<label for = "password">Password</label>
+									<input id = "password" type = "password" name = "password" class="form-control" placeholder = "password" required/>
+								</div>                                            
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<button type = "submit"> Submit </button>
+		</form> 
+    </div>
+    
+</div>
+
+</body>
+</html>

@@ -1,10 +1,9 @@
 {
   "name": "diyhacks",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "pack": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -13,9 +12,25 @@
     "ejs": "^2.7.1",
     "exit-hook": "^2.2.0",
     "express": "^4.17.1",
-    "mongodb": "^3.3.2"
+    "mongodb": "^3.3.2",
+    "mongodb-stitch-browser-sdk": "^4.5.0",
+    "mongodb-stitch-server-sdk": "^4.5.0",
+    "url-search-params-polyfill": "^7.0.0",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.2"
-  }
+    "nodemon": "^1.19.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidigii/DIYHacks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aidigii/DIYHacks/issues"
+  },
+  "homepage": "https://github.com/aidigii/DIYHacks#readme",
+  "description": ""
 }
