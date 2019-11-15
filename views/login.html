@@ -35,7 +35,7 @@
 				<h1>Log in.</h1>
 			</div>
 		</div>
-		<form method = "post" action = "/login">
+		<form method="post" action="/login">
 			<div class = "row justify-content-center">
 				<div id = "color" class = "col-md-7">
 					<div id = "formContainer" class = "row justify-content-center">
@@ -51,16 +51,25 @@
 									<label for = "password">Password</label>
 									<input id = "password" type = "password" name = "password" class="form-control" placeholder = "password" required/>
 								</div>                                            
+							</div>
+							<div id = "incorrectU" class = "form-row">
+								<div class = "col-12 form-group">
+									<label for = "incorrectU">You have entered an invalid username</label>
+								</div>                                            
+							</div>
+							<script>
+								$("#incorrectU").hide();							
+							</script>
 						</div>
 					</div>
 				</div>
-			</div>
-
 			<button type = "submit"> Submit </button>
 		</form> 
     </div>
-    
 </div>
+
+
+
 
 </body>
 </html>

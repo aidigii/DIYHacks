@@ -146,7 +146,32 @@ UserInfo.insertOne(data,function(err, collection){
     }); 
           
     return res.redirect('/'); 
-}) 
+})
+
+app.post('/login', (req,res) => {
+  var username = req.body.username;
+  var password = req.body.password;
+
+  var data = {
+    username: username,
+    password: password,
+  }
+  UserInfo.findOne({username: username}, function(err, user) {
+    
+    if(!user) {
+      res.redirect('/');
+    } 
+    
+    if (user && user.password === password){
+      res.redirect('/');
+    }
+    else {
+      res.redirect('/');    
+    } 
+                 
+});
+})
+
 
 function addUsertoHack(userId){
 
