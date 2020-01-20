@@ -12,6 +12,7 @@
     "ejs": "^2.7.1",
     "exit-hook": "^2.2.0",
     "express": "^4.17.1",
+    "firebase-admin": "^8.9.1",
     "mongodb": "^3.3.2",
     "mongodb-stitch-browser-sdk": "^4.5.0",
     "mongodb-stitch-server-sdk": "^4.5.0",
@@ -23,7 +24,6 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aidigii/DIYHacks.git"
